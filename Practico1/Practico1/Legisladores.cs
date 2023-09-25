@@ -38,6 +38,18 @@ namespace Practico1
         public string getDepartamento() { return departamento; }
         public string getPartidoPolitico() { return partidoPolitico; }
 
+         //SETTERS
+         public void setCamara(string camara){ this.camara = camara;}
+         public void setCasado(bool casado) { this.casado = casado;}
+         public void setEdad (int edad) { this.edad = edad;}
+         public void setNombre(string nombre) { this.nombre = nombre; }
+         public void setApellido(string apellido) { this.apellido = apellido; }
+         public void setDespacho(int despacho) { this.despacho = despacho; }        
+         public void setDepartamento(string departamento) { this.departamento = departamento; }
+         public void setPartido(string partido) { partido = partidoPolitico; }
+
+        //METODOS    
+
         public abstract void Votar();
 
         public virtual void participarDebate()
