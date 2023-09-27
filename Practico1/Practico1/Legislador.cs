@@ -32,24 +32,24 @@ namespace Practico1
         }
 
         //GETTERS
-        public string GetCamara() { return camara; } 
-        public bool GetCasado() { return casado; }
-        public int GetEdad() { return edad; }
-        public string GetNombre() { return nombre; }
-        public string GetApellido() {  return apellido; }
-        public int GetDespacho() { return despacho; }
-        public string GetDepartamento() { return departamento; }
-        public string GetPartidoPolitico() { return partidoPolitico; }
+        public string GetCamara() => camara; 
+        public bool GetCasado() => casado; 
+        public int GetEdad() => edad; 
+        public string GetNombre() => nombre; 
+        public string GetApellido() => apellido; 
+        public int GetDespacho() => despacho; 
+        public string GetDepartamento() => departamento; 
+        public string GetPartidoPolitico() => partidoPolitico; 
 
         //SETTERS
-        public void SetCamara(string camara){ this.camara = camara;}
-        public void SetCasado(bool casado) { this.casado = casado;}
-        public void SetEdad (int edad) { this.edad = edad;}
-        public void SetNombre(string nombre) { this.nombre = nombre; }
-        public void SetApellido(string apellido) { this.apellido = apellido; }
-        public void SetDespacho(int despacho) { this.despacho = despacho; }        
-        public void SetDepartamento(string departamento) { this.departamento = departamento; }
-        public void SetPartido(string partido) { partido = partidoPolitico; }
+        public void SetCamara(string camara) => this.camara = camara;
+        public void SetCasado(bool casado) => this.casado = casado;
+        public void SetEdad (int edad) => this.edad = edad;
+        public void SetNombre(string nombre) => this.nombre = nombre; 
+        public void SetApellido(string apellido) => this.apellido = apellido; 
+        public void SetDespacho(int despacho) => this.despacho = despacho;      
+        public void SetDepartamento(string departamento) => this.departamento = departamento; 
+        public void SetPartido(string partido) => partido = partidoPolitico; 
                    
         
         //METODOS
@@ -58,7 +58,12 @@ namespace Practico1
         
         public virtual string ParticiparDebate()
         {
-            return nombre + " " + apellido + " participa en el próximo debate";
+            return "Senador " + nombre + " " + apellido + " participa en el próximo debate";
+        }
+
+        public virtual string PresentarPropuesta()
+        {
+            return "Senador " + nombre + " " + apellido + " presenta una propuesta";
         }
 
     }

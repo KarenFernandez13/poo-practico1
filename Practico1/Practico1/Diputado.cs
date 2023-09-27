@@ -14,10 +14,14 @@ namespace Practico1
         {
             this.NumAsientoBaja = NumAsientoBaja;
         }
-                
 
-        public int GetAsientoBaja() { return  NumAsientoBaja;}
-        public void SetAsientoBaja(int asientoBaja) { this.NumAsientoBaja = asientoBaja; }
+        List<string> propuestasDiputados = new List<string>
+        {
+            "P. N°1: Carreteras", "P. N°2: Estructuras abandonadas"
+        };
+
+        public int GetAsientoBaja() => NumAsientoBaja;
+        public void SetAsientoBaja(int asientoBaja) => this.NumAsientoBaja = asientoBaja;
 
         //CLASE ABSTRACT
         public override string Votar()
@@ -26,11 +30,12 @@ namespace Practico1
 
         }
         //POLI DE SOBRECARGA
-        public string PresentarPropuesta()
+
+        public List<string> obtenerPropuestas()
         {
-            return "Diputado " + nombre + " " + apellido + " presenta una propuesta";
+            return propuestasDiputados;
         }
-       
+
         //CLASE VIRTUAL
         public override string ParticiparDebate()
         {
