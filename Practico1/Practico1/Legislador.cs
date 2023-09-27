@@ -50,17 +50,15 @@ namespace Practico1
         public void SetDespacho(int despacho) { this.despacho = despacho; }        
         public void SetDepartamento(string departamento) { this.departamento = departamento; }
         public void SetPartido(string partido) { partido = partidoPolitico; }
-
-              
+                   
         
-
         //METODOS
         public abstract string Votar();
 
         
         public virtual string ParticiparDebate()
         {
-            return nombre + " " + apellido + " Participa en el proximo debate";
+            return nombre + " " + apellido + " participa en el próximo debate";
         }
 
     }

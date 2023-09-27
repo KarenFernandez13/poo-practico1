@@ -25,19 +25,19 @@ namespace Practico1
         //CLASE ABSTRACT
         public override string Votar()
         {
-            return nombre + " " + apellido + " Votó";
+            return nombre + " " + apellido + " votó";
         }
 
         //POLI DE SOBRECARGA
         public string PresentarPropuesta() 
         {
-            return "Senador: " +nombre + " " + apellido  + " Presenta una propuesta";
+            return "Senador " + nombre + " " + apellido  + " presenta una propuesta";
         }
 
         //CLASE VIRTUAL
         public override string ParticiparDebate()
         {
-            return "Senador " +nombre + " " + apellido + " Participa en el proximo debate";
+            return "Senador " + nombre + " " + apellido + " participa en el próximo debate";
         }
 
     }

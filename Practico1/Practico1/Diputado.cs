@@ -22,19 +22,19 @@ namespace Practico1
         //CLASE ABSTRACT
         public override string Votar()
         {
-            return nombre + " " + apellido + " Votó";
+            return nombre + " " + apellido + " votó";
 
         }
         //POLI DE SOBRECARGA
         public string PresentarPropuesta()
         {
-            return "Diputado " +nombre + " " + apellido + " Presenta una propuesta";
+            return "Diputado " + nombre + " " + apellido + " presenta una propuesta";
         }
        
         //CLASE VIRTUAL
         public override string ParticiparDebate()
         {
-            return "Diputado " + nombre + " " + apellido + " Participa en el proximo debate";
+            return "Diputado " + nombre + " " + apellido + " participa en el próximo debate";
         }
     }
 }

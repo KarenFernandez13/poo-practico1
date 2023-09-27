@@ -17,21 +17,6 @@ namespace Practico1
             Legisladores.IngresarLegislador(Diputado1);
             Senador Senador1 = new Senador("Azul", "Canelones", 203, "Jose", "Gomez", 40, false, "Senador", 10);
             Legisladores.IngresarLegislador(Senador1);
-            
-            
-
-            //MENU
-            Console.WriteLine("SISTEMA DE INFORMACIÓN PARLAMENTARIA");
-            Console.WriteLine("");
-            Console.WriteLine("Menú Principal: ");
-            Console.WriteLine("");
-            Console.WriteLine("Elige una opción: ");          
-            Console.WriteLine("1 - Ingresar / Eliminar Legislador ");//Sen-Dip
-            Console.WriteLine("2 - Ingresar Voto");
-            Console.WriteLine("3 - Ingresar una Propuesta Legislativa ");
-            Console.WriteLine("4 - Participación en Debates "); //ingresar o ver lista
-            Console.WriteLine("5 - Ver Listados de Cámaras"); //total o por tipo            
-            Console.WriteLine("0 - Salir");
 
             string nombre;
             string apellido;
@@ -43,21 +28,38 @@ namespace Practico1
             bool casado = false;
             string camara;
 
+            //MENU
+            Console.WriteLine("SISTEMA DE INFORMACIÓN PARLAMENTARIA");
+            Console.WriteLine("");
+            Console.WriteLine("Menú Principal: ");
+            Console.WriteLine("");
+            Console.WriteLine("Elige una opción: ");          
+            Console.WriteLine("1 - Ingresar / Eliminar Legislador ");
+            Console.WriteLine("2 - Ingresar Voto");
+            Console.WriteLine("3 - Ingresar una Propuesta Legislativa "); 
+            Console.WriteLine("4 - Participación en Debates "); 
+            Console.WriteLine("5 - Ver Listados de Cámaras");     
+            Console.WriteLine("0 - Salir");
+
             int seleccion;
             seleccion = Convert.ToInt32(Console.ReadLine());
+            Console.Clear();
+
             while (seleccion != 0)
             {
                 if(seleccion == 1) 
                 {
-                    Console.WriteLine("1 para ingresar nuevo legislador ");
-                    Console.WriteLine("2 para eliminar un legislador ");
+                    Console.WriteLine("1 - para ingresar nuevo legislador ");
+                    Console.WriteLine("2 - para eliminar un legislador ");
                     seleccion = Convert.ToInt32(Console.ReadLine());
-                    if(seleccion == 1)
+                    Console.Clear();
+                    if (seleccion == 1)
                     {
                         Console.WriteLine("1 - nuevo Senador ");
                         Console.WriteLine("2 - nuevo Diputado");
                         seleccion = Convert.ToInt32(Console.ReadLine());
-                        if(seleccion == 1)
+                        Console.Clear();
+                        if (seleccion == 1)
                         {
                             Console.WriteLine("Ingrese Partido Politico: ");
                             partido = Console.ReadLine();
@@ -134,22 +136,33 @@ namespace Practico1
                             Diputado1.SetCasado(casado);
                             Diputado1 = new Diputado(partido, departamento, despacho, nombre, apellido, edad, casado, camara, numAsiento);
                             Legisladores.IngresarLegislador(Diputado1);
-
+                            Console.WriteLine("Se agregó correctamente el nuevo legislador!");
+                            Console.ReadKey();
                         }
                     }
                     else if(seleccion == 2) 
                     {
-                        Console.WriteLine("Eliminar");
+                        Console.WriteLine("Ingrese número de despacho para eliminar");
+                        Legisladores.ListarCamaras();
+                        seleccion = Convert.ToInt32(Console.ReadLine());
+                        Legisladores.EliminarLegislador(seleccion);
+                        Console.WriteLine("Legislador eliminado!");
+                        Console.ReadKey();
                     }
+                    Console.Clear();
                 }
                 else if(seleccion == 2)
                 {
-                    Console.WriteLine("Ingrese Numero de Despacho para seleccionar Legislador");
+                    Console.WriteLine("Ingrese número de despacho para seleccionar Legislador");
                     Legisladores.ListarCamaras();
                     seleccion = Convert.ToInt32(Console.ReadLine());
-                    //FALTA COMPLETAR QUE AL INGRESAR NUM DESPACHO SE EFECTUE EL VOTO DE ESE LEGISLADOR
-                  
                     
+                    
+
+
+                    //FALTA COMPLETAR QUE AL INGRESAR NUM DESPACHO SE EFECTUE EL VOTO DE ESE LEGISLADOR
+
+
                 }
                 else if(seleccion == 3)
                 {
@@ -161,52 +174,38 @@ namespace Practico1
                 {
                     Legisladores.ListarCamaras();
                     seleccion = Convert.ToInt32(Console.ReadLine());
+
                     //FALTA QUE ELIJA UN LEGISLADOR PARA Participar en debate
                 }
                 else if (seleccion == 5)
                 {
-                    int numero = Convert.ToInt32(Console.ReadLine());
-                    Legisladores.ListarCamaras();
-                    Console.WriteLine("Cantidad de diputados: " +Legisladores.CantidadPorTipo(numero));
-
-                    //MOSTRAR LISTADOS DE CAMARAS Y CANTIDAD DE LEG. EN CADA UNA - creo que está pronto
+                    Console.WriteLine("1 - para listar cámaras");
+                    Console.WriteLine("2 - para ver la cantidad de legisladores por tipo");
+                    seleccion = Convert.ToInt32(Console.ReadLine());
+                    Console.Clear();
+                    if (seleccion == 1) 
+                    {
+                        Legisladores.ListarCamaras();
+                    } 
+                    else if (seleccion == 2)
+                    {
+                        Console.WriteLine("Cantidad de Diputados: " + Legisladores.CantidadPorTipo(0));
+                        Console.WriteLine("Cantidad de Senadores: " + Legisladores.CantidadPorTipo(1));
+                    }
                 }
-                
-                else if (seleccion == 6)
-                {
-                    //SALIR
-                }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                Console.ReadKey();
+                Console.Clear();
 
                 Console.WriteLine("Elige una opción: ");
                 Console.WriteLine("1 - Ingresar / Eliminar Legislador ");//Sen-Dip
                 Console.WriteLine("2 - Ingresar Voto");
                 Console.WriteLine("3 - Ingresar una Propuesta Legislativa ");
                 Console.WriteLine("4 - Debates "); //ingresar o ver lista
-                Console.WriteLine("5 - Ver Listados de Cámaras"); //total o por tipo            
+                Console.WriteLine("5 - Ver Listados de Cámaras");           
                 Console.WriteLine("0 - Salir");
                 seleccion = Convert.ToInt32(Console.ReadLine());
-
+                Console.Clear();
             }
-
-
-
-
-
-
         }
     }
 }

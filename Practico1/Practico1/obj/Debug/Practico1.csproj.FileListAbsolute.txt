@@ -5,3 +5,10 @@ C:\Users\Usuario\source\repos\Practico1\Practico1\obj\Debug\Practico1.csproj.Ass
 C:\Users\Usuario\source\repos\Practico1\Practico1\obj\Debug\Practico1.csproj.CoreCompileInputs.cache
 C:\Users\Usuario\source\repos\Practico1\Practico1\obj\Debug\Practico1.exe
 C:\Users\Usuario\source\repos\Practico1\Practico1\obj\Debug\Practico1.pdb
+C:\Users\usuario\OneDrive\Escritorio\Practico1\Practico1\obj\Debug\Practico1.csproj.AssemblyReference.cache
+C:\Users\usuario\OneDrive\Escritorio\Practico1\Practico1\obj\Debug\Practico1.csproj.CoreCompileInputs.cache
+C:\Users\usuario\OneDrive\Escritorio\Practico1\Practico1\obj\Debug\Practico1.exe
+C:\Users\usuario\OneDrive\Escritorio\Practico1\Practico1\obj\Debug\Practico1.pdb
+C:\Users\usuario\OneDrive\Escritorio\Practico1\Practico1\bin\Debug\Practico1.exe.config
+C:\Users\usuario\OneDrive\Escritorio\Practico1\Practico1\bin\Debug\Practico1.exe
+C:\Users\usuario\OneDrive\Escritorio\Practico1\Practico1\bin\Debug\Practico1.pdb
