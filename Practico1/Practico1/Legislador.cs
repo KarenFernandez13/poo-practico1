@@ -31,8 +31,6 @@ namespace Practico1
 
         }
 
-
-
         //GETTERS
         public string GetCamara() { return camara; } 
         public bool GetCasado() { return casado; }
@@ -53,14 +51,16 @@ namespace Practico1
         public void SetDepartamento(string departamento) { this.departamento = departamento; }
         public void SetPartido(string partido) { partido = partidoPolitico; }
 
-
+              
+        
 
         //METODOS
-        public abstract void Votar();
+        public abstract string Votar();
 
-        public virtual void ParticiparDebate()
+        
+        public virtual string ParticiparDebate()
         {
-            Console.WriteLine("Participaré en el próximo debate");
+            return nombre + " " + apellido + " Participa en el proximo debate";
         }
 
     }

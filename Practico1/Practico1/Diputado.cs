@@ -8,23 +8,33 @@ namespace Practico1
 {
     class Diputado : Legislador
     {
-        public Diputado(string partidoPolitico, string departamento, int despacho, string nombre, string apellido, int edad,
-            bool casado, string camara) : base(partidoPolitico, departamento, despacho, nombre, apellido, edad, casado, camara) { }
-
-
         private int NumAsientoBaja;
+        public Diputado(string partidoPolitico, string departamento, int despacho, string nombre, string apellido, int edad,
+            bool casado, string camara, int NumAsientoBaja) : base(partidoPolitico, departamento, despacho, nombre, apellido, edad, casado, camara) 
+        {
+            this.NumAsientoBaja = NumAsientoBaja;
+        }
+                
 
         public int GetAsientoBaja() { return  NumAsientoBaja;}
-        public void SetAsientoAlta(int asientoBaja) { asientoBaja = NumAsientoBaja; }
+        public void SetAsientoBaja(int asientoBaja) { this.NumAsientoBaja = asientoBaja; }
 
-        public override void Votar()
+        //CLASE ABSTRACT
+        public override string Votar()
         {
-            Console.WriteLine("Mi voto es: ");
+            return nombre + " " + apellido + " Votó";
+
         }
-
-        public void PresentarPropuesta()
+        //POLI DE SOBRECARGA
+        public string PresentarPropuesta()
         {
-            Console.WriteLine("Propuesta Legislativa de Diputado.... ");
+            return "Diputado " +nombre + " " + apellido + " Presenta una propuesta";
+        }
+       
+        //CLASE VIRTUAL
+        public override string ParticiparDebate()
+        {
+            return "Diputado " + nombre + " " + apellido + " Participa en el proximo debate";
         }
     }
 }
