@@ -9,7 +9,7 @@ namespace Practico1
 {
     class Parlamento
     {
-        public List <Legislador> ListaLegisladores;
+        List <Legislador> ListaLegisladores;
 
         public Parlamento()
         {
@@ -20,32 +20,50 @@ namespace Practico1
         {
             ListaLegisladores.Add(Legislador);
         }
+        
         public void EliminarLegislador(Legislador Legislador)
         {
             ListaLegisladores.Remove(Legislador);
         }
 
-        public void ListarCamaras(List<Legislador> Lista)
+        public void ListarCamaras()
         {
-            foreach (var x in Lista)
+            foreach (var x in ListaLegisladores)
             {
-                Console.WriteLine("Legislador : " + x.GetNombre() + " " + x.GetApellido() + "Cámara: " + x.GetCamara() + " Numero de despacho: " + x.GetDespacho());
+                Console.WriteLine("Legislador : " + x.GetNombre() + " " + x.GetApellido() + " Cámara: " + x.GetCamara() + " Numero de despacho: " + x.GetDespacho());
             }
         }
         private int contador = 0;
         
-        public void CantidadPorTipo(List<Legislador> Lista)
+        public int CantidadPorTipo(int numero)
         {
-            foreach (var y in  Lista) 
+
+            if (numero == 0)
             {
-                if((y.GetCamara() == "Diputado") || (y.GetCamara() == "diputado"))
+                foreach (var y in ListaLegisladores)
                 {
-                    contador++;
-                }                
+                    if ((y.GetCamara() == "Diputado"))
+                    {
+                        contador++;
+                    }
+                }
+            }else if (numero == 1)
+            {
+                foreach (var y in ListaLegisladores)
+                {
+                    if ((y.GetCamara() == "Senador"))
+                    {
+                        contador++;
+                    }
+                }
+
             }
-            Console.WriteLine("Cantidad de diputados: " +contador);
-            Console.WriteLine("Cantidad de Senadores: " + (ListaLegisladores.Count - contador));
+                          
+            return contador;
+            
         }
+
+        
 
        
 
