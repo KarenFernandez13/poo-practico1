@@ -16,28 +16,39 @@ namespace Practico1
             ListaLegisladores = new List<Legislador>();
         }
 
+
+        public List<Legislador> obtenerLegisladores()
+        {
+            return ListaLegisladores;
+        }
+
+
         public void IngresarLegislador(Legislador Legislador)
         {
             ListaLegisladores.Add(Legislador);
         }
         
-        public void EliminarLegislador(Legislador Legislador)
+
+        public void EliminarLegislador(int numero)
         {
-            ListaLegisladores.Remove(Legislador);
+            Legislador eliminarLegislador = ListaLegisladores.Find(x => x.GetDespacho() == numero);
+            ListaLegisladores.Remove(eliminarLegislador);
         }
+
 
         public void ListarCamaras()
         {
             foreach (var x in ListaLegisladores)
             {
-                Console.WriteLine("Legislador : " + x.GetNombre() + " " + x.GetApellido() + " Cámara: " + x.GetCamara() + " Numero de despacho: " + x.GetDespacho());
+                Console.WriteLine("Legislador: " + x.GetNombre() + " " + x.GetApellido() + " - " +"Cámara: " + x.GetCamara() + " - " + "Numero de despacho: " + x.GetDespacho());
             }
         }
+        
+      
         private int contador = 0;
         
         public int CantidadPorTipo(int numero)
         {
-
             if (numero == 0)
             {
                 foreach (var y in ListaLegisladores)
@@ -47,7 +58,8 @@ namespace Practico1
                         contador++;
                     }
                 }
-            }else if (numero == 1)
+            }
+            else if (numero == 1)
             {
                 foreach (var y in ListaLegisladores)
                 {
@@ -56,19 +68,9 @@ namespace Practico1
                         contador++;
                     }
                 }
-
             }
-                          
             return contador;
-            
         }
-
-        
-
-       
-
-
-
-
     }
+
 }

@@ -14,27 +14,32 @@ namespace Practico1
         {
             this.NumAsientoBaja = NumAsientoBaja;
         }
-                
 
-        public int GetAsientoBaja() { return  NumAsientoBaja;}
-        public void SetAsientoBaja(int asientoBaja) { this.NumAsientoBaja = asientoBaja; }
+        List<string> propuestasDiputados = new List<string>
+        {
+            "P. N°1: Carreteras", "P. N°2: Estructuras abandonadas"
+        };
+
+        public int GetAsientoBaja() => NumAsientoBaja;
+        public void SetAsientoBaja(int asientoBaja) => this.NumAsientoBaja = asientoBaja;
 
         //CLASE ABSTRACT
         public override string Votar()
         {
-            return nombre + " " + apellido + " Votó";
+            return nombre + " " + apellido + " votó";
 
         }
         //POLI DE SOBRECARGA
-        public string PresentarPropuesta()
+
+        public List<string> obtenerPropuestas()
         {
-            return "Diputado " +nombre + " " + apellido + " Presenta una propuesta";
+            return propuestasDiputados;
         }
-       
+
         //CLASE VIRTUAL
         public override string ParticiparDebate()
         {
-            return "Diputado " + nombre + " " + apellido + " Participa en el proximo debate";
+            return "Diputado " + nombre + " " + apellido + " participa en el próximo debate";
         }
     }
 }
