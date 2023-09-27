@@ -16,16 +16,25 @@ namespace Practico1
             ListaLegisladores = new List<Legislador>();
         }
 
+
+        public List<Legislador> obtenerLegisladores()
+        {
+            return ListaLegisladores;
+        }
+
+
         public void IngresarLegislador(Legislador Legislador)
         {
             ListaLegisladores.Add(Legislador);
         }
         
+
         public void EliminarLegislador(int numero)
         {
             Legislador eliminarLegislador = ListaLegisladores.Find(x => x.GetDespacho() == numero);
             ListaLegisladores.Remove(eliminarLegislador);
         }
+
 
         public void ListarCamaras()
         {
@@ -34,6 +43,8 @@ namespace Practico1
                 Console.WriteLine("Legislador: " + x.GetNombre() + " " + x.GetApellido() + " - " +"Cámara: " + x.GetCamara() + " - " + "Numero de despacho: " + x.GetDespacho());
             }
         }
+        
+      
         private int contador = 0;
         
         public int CantidadPorTipo(int numero)
