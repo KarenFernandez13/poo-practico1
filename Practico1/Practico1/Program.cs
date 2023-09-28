@@ -47,7 +47,15 @@ namespace Practico1
             Console.WriteLine("0 - Salir");
 
             int seleccion;
-            seleccion = Convert.ToInt32(Console.ReadLine());
+            bool esNumero;
+            do {
+                esNumero = int.TryParse(Console.ReadLine(), out seleccion);
+                if (!esNumero)
+                {
+                    Console.WriteLine("No es un número, vuelva a ingresar.");
+                }
+            } while (!esNumero);
+            
             while (seleccion != 0 && seleccion != 1 && seleccion != 2 && seleccion != 3 && seleccion != 4 && seleccion != 5)
             {
                 Console.WriteLine("Número invalido. Ingrese nuevamente");
@@ -61,7 +69,14 @@ namespace Practico1
                 {
                     Console.WriteLine("1 - para ingresar nuevo legislador ");
                     Console.WriteLine("2 - para eliminar un legislador ");
-                    seleccion = Convert.ToInt32(Console.ReadLine());
+                    do
+                    {
+                        esNumero = int.TryParse(Console.ReadLine(), out seleccion);
+                        if (!esNumero)
+                        {
+                            Console.WriteLine("No es un número, vuelva a ingresar.");
+                        }
+                    } while (!esNumero);
                     while (seleccion != 1 && seleccion != 2)
                     {
                         Console.WriteLine("Número invalido. Ingrese nuevamente");
@@ -72,7 +87,13 @@ namespace Practico1
                     {
                         Console.WriteLine("1 - nuevo Senador ");
                         Console.WriteLine("2 - nuevo Diputado");
-                        seleccion = Convert.ToInt32(Console.ReadLine());
+                        do {
+                            esNumero = int.TryParse(Console.ReadLine(), out seleccion);
+                            if (!esNumero)
+                            {
+                                Console.WriteLine("No es un número, vuelva a ingresar.");
+                            }
+                        } while (!esNumero);
                         while (seleccion != 1 && seleccion != 2)
                         {
                             Console.WriteLine("Número invalido. Ingrese nuevamente");
@@ -137,7 +158,14 @@ namespace Practico1
                     {
                         Console.WriteLine("Ingrese número de despacho para eliminar");
                         Legisladores.ListarCamaras();
-                        seleccion = Convert.ToInt32(Console.ReadLine());
+                        do
+                        {
+                            esNumero = int.TryParse(Console.ReadLine(), out seleccion);
+                            if (!esNumero)
+                            {
+                                Console.WriteLine("No es un número, vuelva a ingresar.");
+                            }
+                        } while (!esNumero);
                         Legisladores.EliminarLegislador(seleccion);
                         Console.WriteLine("Legislador eliminado!");
                     }
@@ -146,7 +174,13 @@ namespace Practico1
                 {
                     Console.WriteLine("1 - para listar cámaras");
                     Console.WriteLine("2 - para ver la cantidad de legisladores por tipo");
-                    seleccion = Convert.ToInt32(Console.ReadLine());
+                    do {
+                        esNumero = int.TryParse(Console.ReadLine(), out seleccion);
+                        if (!esNumero)
+                        {
+                            Console.WriteLine("No es un número, vuelva a ingresar.");
+                        }
+                    } while (!esNumero);
                     while (seleccion != 1 && seleccion != 2)
                     {
                         Console.WriteLine("Número invalido. Ingrese nuevamente");
@@ -166,8 +200,14 @@ namespace Practico1
                 else if(seleccion == 3)
                 {
                     Console.WriteLine("1 - para ver propuestas");
-                    Console.WriteLine("2 - para ingresar propuesta de un legislador");
-                    seleccion = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("2 - para ingresar propuesta de un legislador"); 
+                    do {
+                        esNumero = int.TryParse(Console.ReadLine(), out seleccion);
+                        if (!esNumero)
+                        {
+                            Console.WriteLine("No es un número, vuelva a ingresar.");
+                        }
+                    } while (!esNumero);
                     while (seleccion != 1 && seleccion != 2)
                     {
                         Console.WriteLine("Número invalido. Ingrese nuevamente");
@@ -191,8 +231,14 @@ namespace Practico1
                     else if (seleccion == 2)
                     {
                         Console.WriteLine("Ingrese número de despacho para seleccionar Legislador");
-                        Legisladores.ListarCamaras();
-                        seleccion = Convert.ToInt32(Console.ReadLine());
+                        Legisladores.ListarCamaras(); do
+                        {
+                            esNumero = int.TryParse(Console.ReadLine(), out seleccion);
+                            if (!esNumero)
+                            {
+                                Console.WriteLine("No es un número, vuelva a ingresar.");
+                            }
+                        } while (!esNumero);
                         foreach (var x in lista)
                         {
                             if (x.GetDespacho() == seleccion)
@@ -205,8 +251,15 @@ namespace Practico1
                 else if(seleccion == 4)
                 {
                     Console.WriteLine("Ingrese número de despacho para seleccionar Legislador");
-                    Legisladores.ListarCamaras();
-                    seleccion = Convert.ToInt32(Console.ReadLine());
+                    Legisladores.ListarCamaras(); 
+                    do
+                    {
+                        esNumero = int.TryParse(Console.ReadLine(), out seleccion);
+                        if (!esNumero)
+                        {
+                            Console.WriteLine("No es un número, vuelva a ingresar.");
+                        }
+                    } while (!esNumero);
                     foreach (var x in lista)
                     {
                         if (x.GetDespacho() == seleccion)
@@ -219,7 +272,14 @@ namespace Practico1
                 {
                     Console.WriteLine("Ingrese número de despacho para seleccionar Legislador");
                     Legisladores.ListarCamaras();
-                    seleccion = Convert.ToInt32(Console.ReadLine());
+                    do
+                    {
+                        esNumero = int.TryParse(Console.ReadLine(), out seleccion);
+                        if (!esNumero)
+                        {
+                            Console.WriteLine("No es un número, vuelva a ingresar.");
+                        }
+                    } while (!esNumero);
                     foreach (var x in lista)
                     {
                         if (x.GetDespacho() == seleccion)
@@ -238,7 +298,13 @@ namespace Practico1
                 Console.WriteLine("4 - Registrar participación en debate"); 
                 Console.WriteLine("5 - Registrar voto");           
                 Console.WriteLine("0 - Salir");
-                seleccion = Convert.ToInt32(Console.ReadLine());
+                do {
+                    esNumero = int.TryParse(Console.ReadLine(), out seleccion);
+                    if (!esNumero)
+                    {
+                        Console.WriteLine("No es un número, vuelva a ingresar.");
+                    }
+                } while (!esNumero);
                 while (seleccion != 0 && seleccion != 1 && seleccion != 2 && seleccion != 3 && seleccion != 4 && seleccion != 5)
                 {
                     Console.WriteLine("Número invalido. Ingrese nuevamente");
