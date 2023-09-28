@@ -17,27 +17,24 @@ namespace Practico1
             this.NumAsientoAlta = NumAsientoAlta;
         }
 
-        public int GetAsientoAlta() { return NumAsientoAlta;}
+        public int GetAsientoAlta() => NumAsientoAlta;
+        public void SetAsientoAlta(int asientoAlta) => asientoAlta = NumAsientoAlta;
 
-        public void SetAsientoAlta(int asientoAlta) { asientoAlta = NumAsientoAlta; }
+        List<string> propuestasSenadores = new List<string>
+        {
+            "P. N°1: Animales", "P. N°2: Medio ambiente", "P. N°3: Agua"
+        };
 
-                 
+        // POLI DE SOBRECARGA
+        public List<string> ObtenerPropuestas()
+        {
+            return propuestasSenadores;
+        }
+
         //CLASE ABSTRACT
         public override string Votar()
         {
-            return nombre + " " + apellido + " Votó";
-        }
-
-        //POLI DE SOBRECARGA
-        public string PresentarPropuesta() 
-        {
-            return "Senador: " +nombre + " " + apellido  + " Presenta una propuesta";
-        }
-
-        //CLASE VIRTUAL
-        public override string ParticiparDebate()
-        {
-            return "Senador " +nombre + " " + apellido + " Participa en el proximo debate";
+            return nombre + " " + apellido + " votó";
         }
 
     }
