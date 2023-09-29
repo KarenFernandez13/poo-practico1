@@ -1,0 +1,7 @@
+C:\Users\Usuario\Documents\Downloads\Practico1 - copia\obj\Debug\Practico1copia.csproj.AssemblyReference.cache
+C:\Users\Usuario\Documents\Downloads\Practico1 - copia\obj\Debug\Practico1copia.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\Downloads\Practico1 - copia\obj\Debug\Practico1.exe
+C:\Users\Usuario\Documents\Downloads\Practico1 - copia\obj\Debug\Practico1.pdb
+C:\Users\Usuario\Documents\Downloads\Practico1 - copia\bin\Debug\Practico1.exe.config
+C:\Users\Usuario\Documents\Downloads\Practico1 - copia\bin\Debug\Practico1.exe
+C:\Users\Usuario\Documents\Downloads\Practico1 - copia\bin\Debug\Practico1.pdb
