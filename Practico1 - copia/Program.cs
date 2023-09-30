@@ -52,17 +52,12 @@ namespace Practico1
             do
             {
                 esNumero = int.TryParse(Console.ReadLine(), out seleccion);
-                if (!esNumero)
+                if (!esNumero || (seleccion != 0 && seleccion != 1 && seleccion != 2 && seleccion != 3 && seleccion != 4 && seleccion != 5))
                 {
-                    Console.WriteLine("No es un número, vuelva a ingresar.");
+                    Console.WriteLine("Incorrecto, vuelva a ingresar.");
                 }
-            } while (!esNumero);
+            } while (!esNumero || (seleccion != 0 && seleccion != 1 && seleccion != 2 && seleccion != 3 && seleccion != 4 && seleccion != 5));
 
-            while (seleccion != 0 && seleccion != 1 && seleccion != 2 && seleccion != 3 && seleccion != 4 && seleccion != 5)
-            {
-                Console.WriteLine("Número invalido. Ingrese nuevamente");
-                seleccion = Convert.ToInt32(Console.ReadLine());
-            }
             Console.Clear();
 
             while (seleccion != 0)
@@ -74,16 +69,11 @@ namespace Practico1
                     do
                     {
                         esNumero = int.TryParse(Console.ReadLine(), out seleccion);
-                        if (!esNumero)
+                        if (!esNumero || (seleccion != 1 && seleccion != 2))
                         {
-                            Console.WriteLine("No es un número, vuelva a ingresar.");
+                            Console.WriteLine("Incorrecto, vuelva a ingresar.");
                         }
-                    } while (!esNumero);
-                    while (seleccion != 1 && seleccion != 2)
-                    {
-                        Console.WriteLine("Número invalido. Ingrese nuevamente");
-                        seleccion = Convert.ToInt32(Console.ReadLine());
-                    }
+                    } while (!esNumero || (seleccion != 1 && seleccion != 2));
                     Console.Clear();
 
                     if (seleccion == 1)
@@ -93,70 +83,72 @@ namespace Practico1
                         do
                         {
                             esNumero = int.TryParse(Console.ReadLine(), out seleccion);
+                            if (!esNumero || (seleccion != 1 && seleccion != 2))
+                            {
+                                Console.WriteLine("Incorrecto, vuelva a ingresar.");
+                            }
+                        } while (!esNumero || (seleccion != 1 && seleccion != 2));
+                        Console.Clear();
+
+                        Console.WriteLine("Ingrese Nombre: ");
+                        nombre = (Console.ReadLine());
+
+                        Console.WriteLine("Ingrese Apellido: ");
+                        apellido = (Console.ReadLine());
+
+                        Console.WriteLine("Ingrese Partido Politico: ");
+                        partido = Console.ReadLine();
+
+                        Console.WriteLine("Ingrese Edad: ");
+                        do
+                        {
+                            esNumero = int.TryParse(Console.ReadLine(), out edad);
                             if (!esNumero)
                             {
                                 Console.WriteLine("No es un número, vuelva a ingresar.");
                             }
                         } while (!esNumero);
-                        while (seleccion != 1 && seleccion != 2)
+
+                        Console.WriteLine("Ingrese Numero de Asiento: ");
+                        do
                         {
-                            Console.WriteLine("Número invalido. Ingrese nuevamente");
-                            seleccion = Convert.ToInt32(Console.ReadLine());
-                        }
-                        Console.Clear();
+                            esNumero = int.TryParse(Console.ReadLine(), out numAsiento);
+                            if (!esNumero)
+                            {
+                                Console.WriteLine("No es un número, vuelva a ingresar.");
+                            }
+                        } while (!esNumero);
+                                                
+                        Console.WriteLine("Ingrese Departamento: ");                             
+                        departamento = (Console.ReadLine());
+
+                        Console.WriteLine("Estado civil: 0 para soltero / 1 para casado");
+                        int EstadoCivil;
+                        do
+                        {
+                            esNumero = int.TryParse(Console.ReadLine(), out EstadoCivil);
+                            if (!esNumero || (EstadoCivil != 0 && EstadoCivil != 1))
+                            {
+                                Console.WriteLine("No es correccto, vuelva a ingresar.");
+                            }
+                        } while (!esNumero || (EstadoCivil != 0 && EstadoCivil != 1));
+
+                        if (EstadoCivil == 1) { casado = true; }
+                        else { casado = false; }
+
 
                         if (seleccion == 1) //INGRESAR SENADOR
                         {
-                            Console.WriteLine("Ingrese Nombre: ");
-                            nombre = (Console.ReadLine());
-
-                            Console.WriteLine("Ingrese Apellido: ");
-                            apellido = (Console.ReadLine());
-
-                            Console.WriteLine("Ingrese Partido Politico: ");
-                            partido = Console.ReadLine();
-
-                            Console.WriteLine("Ingrese Edad: ");
-                            do
-                            {
-                                esNumero = int.TryParse(Console.ReadLine(), out edad);
-                                if (!esNumero)
-                                {
-                                    Console.WriteLine("No es un número, vuelva a ingresar.");
-                                }
-                            } while (!esNumero);
-
-                            Console.WriteLine("Ingrese Numero de Asiento: ");
-                            do
-                            {
-                                esNumero = int.TryParse(Console.ReadLine(), out numAsiento);
-                                if (!esNumero)
-                                {
-                                    Console.WriteLine("No es un número, vuelva a ingresar.");
-                                }
-                            } while (!esNumero);
-
-                            Console.WriteLine("Ingrese Despacho: ");
+                            Console.WriteLine("Ingrese Despacho (entre 1 y 30): ");
                             do
                             {
                                 esNumero = int.TryParse(Console.ReadLine(), out despacho);
-                                if (!esNumero)
+                                if (!esNumero || (despacho < 1 || despacho > 30))
                                 {
-                                    Console.WriteLine("No es un número, vuelva a ingresar.");
+                                    Console.WriteLine("Incorrecto, vuelva a ingresar.");
                                 }
-                            } while (!esNumero);
-                            while (despacho < 1 || despacho > 30)
-                            {
-                                Console.WriteLine("Numero incorrecto. Ingrese numero de 1 a 30");
-                                do
-                                {
-                                    esNumero = int.TryParse(Console.ReadLine(), out despacho);
-                                    if (!esNumero)
-                                    {
-                                        Console.WriteLine("No es un número, vuelva a ingresar.");
-                                    }
-                                } while (!esNumero);
-                            }
+                            } while (!esNumero || (despacho < 1 || despacho > 30));
+                 
                             foreach (var x in lista)
                             {
                                 while (x.GetDespacho() == despacho)
@@ -173,83 +165,22 @@ namespace Practico1
                                 }
                             }
 
-                            Console.WriteLine("Ingrese Departamento: ");                             
-                            departamento = (Console.ReadLine());
-
-                            camara = "Senadores";
-
-                            Console.WriteLine("Estado civil: 0 para soltero / 1 para casado");
-                            int EstadoCivil;
-                            do
-                            {
-                                esNumero = int.TryParse(Console.ReadLine(), out EstadoCivil);
-                                if (!esNumero)
-                                {
-                                    Console.WriteLine("No es un número, vuelva a ingresar.");
-                                }
-                            } while (!esNumero);
-
-                            if (EstadoCivil == 1) { casado = true; }
-                            else { casado = false; }
+                            camara = "Senador";
 
                             Senador1 = new Senador(partido, departamento, despacho, nombre, apellido, edad, casado, camara, numAsiento);
                             Legisladores.IngresarLegislador(Senador1);
                         }
                         else if (seleccion == 2) //INGRESAR DIPUTADO
                         {
-                            Console.WriteLine("Ingrese Nombre: ");
-                            nombre = (Console.ReadLine());
-
-                            Console.WriteLine("Ingrese Apellido: ");
-                            apellido = (Console.ReadLine());
-
-                            Console.WriteLine("Ingrese Partido Politico: ");
-                            partido = Console.ReadLine();
-
-                            camara = "Diputados";
-
-                            Console.WriteLine("Ingrese Edad: ");
-                            do
-                            {
-                                esNumero = int.TryParse(Console.ReadLine(), out edad);
-                                if (!esNumero)
-                                {
-                                    Console.WriteLine("No es un número, vuelva a ingresar.");
-                                }
-                            } while (!esNumero);
-
-                            Console.WriteLine("Ingrese Numero de Asiento: ");
-                            do
-                            {
-                                esNumero = int.TryParse(Console.ReadLine(), out numAsiento);
-                                if (!esNumero)
-                                {
-                                    Console.WriteLine("No es un número, vuelva a ingresar.");
-                                }
-                            } while (!esNumero);
-
-                            Console.WriteLine("Ingrese Despacho: ");
+                            Console.WriteLine("Ingrese Despacho (entre 31 y 129): ");
                             do
                             {
                                 esNumero = int.TryParse(Console.ReadLine(), out despacho);
-                                if (!esNumero)
+                                if (!esNumero || (despacho < 31 || despacho >= 130))
                                 {
-                                    Console.WriteLine("No es un número, vuelva a ingresar.");
+                                    Console.WriteLine("Incorrecto, vuelva a ingresar.");
                                 }
-                            } while (!esNumero);
-
-                            while (despacho < 31 || despacho > 130)
-                            {
-                                Console.WriteLine("Numero incorrecto. Ingrese numero de 31 al 130");
-                                do
-                                {
-                                    esNumero = int.TryParse(Console.ReadLine(), out despacho);
-                                    if (!esNumero)
-                                    {
-                                        Console.WriteLine("No es un número, vuelva a ingresar.");
-                                    }
-                                } while (!esNumero);
-                            }
+                            } while (!esNumero || (despacho < 31 || despacho > 130));
 
                             foreach (var x in lista)
                             {
@@ -266,56 +197,46 @@ namespace Practico1
                                     } while (!esNumero);
                                 }
                             }
-                            Console.WriteLine("Ingrese Departamento: ");
-                            departamento = (Console.ReadLine());
-
-                            Console.WriteLine("Estado civil: 0 para soltero / 1 para casado");
-                            int EstadoCivil;
-                            do
-                            {
-                                esNumero = int.TryParse(Console.ReadLine(), out EstadoCivil);
-                                if (!esNumero)
-                                {
-                                    Console.WriteLine("No es un número, vuelva a ingresar.");
-                                }
-                            } while (!esNumero);
-
-                            if (EstadoCivil == 1)
-                            { casado = true; }
-                            else { casado = false; }
-
+                            camara = "Diputado";
                             Diputado1 = new Diputado(partido, departamento, despacho, nombre, apellido, edad, casado, camara, numAsiento);
                             Legisladores.IngresarLegislador(Diputado1);
                         }
                         Console.WriteLine("Se agregó correctamente el nuevo legislador!");
+                        Console.WriteLine("");
+                        Console.WriteLine("Presione enter para volver al menú");
                     }
                     else if (seleccion == 2)
                     {
-                        Console.WriteLine("Ingrese número de despacho para eliminar");
+                        Console.WriteLine("Ingrese número de despacho para eliminar (entre 1 y 129)");
                         Legisladores.ListarCamaras();
                         do
                         {
                             esNumero = int.TryParse(Console.ReadLine(), out despacho);
-                            if (!esNumero)
+                            if (!esNumero || (despacho < 1 || despacho >= 130))
                             {
-                                Console.WriteLine("No es un número, vuelva a ingresar.");
+                                Console.WriteLine("Incorrecto, vuelva a ingresar.");
                             }
-                        } while (!esNumero);
-
-                        while (despacho < 1 || despacho > 129)
+                        } while (!esNumero || (despacho < 1 || despacho >= 130));
+                        foreach (var x in lista)
                         {
-                            Console.WriteLine("Numero incorrecto. Ingrese numero de 1 al 129");
-                            do
+                            if (x.GetDespacho() != despacho)
                             {
-                                esNumero = int.TryParse(Console.ReadLine(), out despacho);
-                                if (!esNumero)
+                                Console.WriteLine("No hay un legislador ingresado con ese número de desapcho. Ingrese otro: ");
+                                do
                                 {
-                                    Console.WriteLine("No es un número, vuelva a ingresar.");
-                                }
-                            } while (!esNumero);
+                                    esNumero = int.TryParse(Console.ReadLine(), out despacho);
+                                    if (!esNumero || (despacho < 1 || despacho >= 130))
+                                    {
+                                        Console.WriteLine("Incorrecto, vuelva a ingresar.");
+                                    }
+                                } while (!esNumero || (despacho < 1 || despacho >= 130));
+                            }
                         }
+
                         Legisladores.EliminarLegislador(despacho);
                         Console.WriteLine("Legislador eliminado!");
+                        Console.WriteLine("");
+                        Console.WriteLine("Presione enter para volver al menú");
 
                     }
                 }
@@ -326,17 +247,13 @@ namespace Practico1
                     do
                     {
                         esNumero = int.TryParse(Console.ReadLine(), out seleccion);
-                        if (!esNumero)
+                        if (!esNumero || (seleccion != 1 && seleccion != 2))
                         {
-                            Console.WriteLine("No es un número, vuelva a ingresar.");
+                            Console.WriteLine("Incorrecto, vuelva a ingresar.");
                         }
-                    } while (!esNumero);
-                    while (seleccion != 1 && seleccion != 2)
-                    {
-                        Console.WriteLine("Número invalido. Ingrese nuevamente");
-                        seleccion = Convert.ToInt32(Console.ReadLine());
-                    }
+                    } while (!esNumero || (seleccion != 1 && seleccion != 2));
                     Console.Clear();
+
                     if (seleccion == 1)
                     {
                         Legisladores.ListarCamaras();
@@ -346,6 +263,8 @@ namespace Practico1
                         Console.WriteLine("Cantidad de Diputados: " + Legisladores.CantidadPorTipo(0));
                         Console.WriteLine("Cantidad de Senadores: " + Legisladores.CantidadPorTipo(1));
                     }
+                    Console.WriteLine("");
+                    Console.WriteLine("Presione enter para volver al menú");
                 }
                 else if (seleccion == 3)   //PROPUESTAS
                 {
@@ -354,16 +273,11 @@ namespace Practico1
                     do
                     {
                         esNumero = int.TryParse(Console.ReadLine(), out seleccion);
-                        if (!esNumero)
+                        if (!esNumero || (seleccion != 1 && seleccion != 2))
                         {
-                            Console.WriteLine("No es un número, vuelva a ingresar.");
+                            Console.WriteLine("Incorrecto, vuelva a ingresar.");
                         }
-                    } while (!esNumero);
-                    while (seleccion != 1 && seleccion != 2)
-                    {
-                        Console.WriteLine("Número invalido. Ingrese nuevamente");
-                        seleccion = Convert.ToInt32(Console.ReadLine());
-                    }
+                    } while (!esNumero || (seleccion != 1 && seleccion != 2));
                     Console.Clear();
                     if (seleccion == 1)
                     {
@@ -378,31 +292,20 @@ namespace Practico1
                         {
                             Console.WriteLine(x);
                         }
-                    }
+                    }                    
                     else if (seleccion == 2)
                     {
-                        Console.WriteLine("Ingrese número de despacho para seleccionar Legislador");
+                        Console.WriteLine("Ingrese número de despacho para seleccionar Legislador (entre 1 y 129)");
                         Legisladores.ListarCamaras();
                         do
                         {
                             esNumero = int.TryParse(Console.ReadLine(), out seleccion);
-                            if (!esNumero)
+                            if (!esNumero || (seleccion < 1 || seleccion >= 130))
                             {
-                                Console.WriteLine("No es un número, vuelva a ingresar.");
+                                Console.WriteLine("Incorrecto, vuelva a ingresar.");
                             }
-                        } while (!esNumero);
-                        while (seleccion < 1 || seleccion > 129)
-                        {
-                            Console.WriteLine("Numero incorrecto. Ingrese numero de 1 al 129");
-                            do
-                            {
-                                esNumero = int.TryParse(Console.ReadLine(), out seleccion);
-                                if (!esNumero)
-                                {
-                                    Console.WriteLine("No es un número, vuelva a ingresar.");
-                                }
-                            } while (!esNumero);
-                        }
+                        } while (!esNumero || (seleccion < 1 || seleccion >= 130));
+                   
                         foreach (var x in lista)
                         {
                             if (x.GetDespacho() == seleccion)
@@ -411,31 +314,22 @@ namespace Practico1
                             }
                         }
                     }
+                    Console.WriteLine("");
+                    Console.WriteLine("Presione enter para volver al menú");
                 }
                 else if (seleccion == 4)   //PARTICIPAR DEBATE
                 {
-                    Console.WriteLine("Ingrese número de despacho para seleccionar Legislador");
+                    Console.WriteLine("Ingrese número de despacho para seleccionar Legislador (entre 1 y 129)");
                     Legisladores.ListarCamaras();
                     do
                     {
                         esNumero = int.TryParse(Console.ReadLine(), out seleccion);
-                        if (!esNumero)
+                        if (!esNumero|| (seleccion != 1 && seleccion != 2))
                         {
-                            Console.WriteLine("No es un número, vuelva a ingresar.");
+                            Console.WriteLine("Incorrecto, vuelva a ingresar.");
                         }
-                    } while (!esNumero);
-                    while (seleccion < 1 || seleccion > 129)
-                    {
-                        Console.WriteLine("Numero incorrecto. Ingrese numero de 1 al 129");
-                        do
-                        {
-                            esNumero = int.TryParse(Console.ReadLine(), out seleccion);
-                            if (!esNumero)
-                            {
-                                Console.WriteLine("No es un número, vuelva a ingresar.");
-                            }
-                        } while (!esNumero);
-                    }
+                    } while (!esNumero || (seleccion < 1 || seleccion >= 130));
+                
                     foreach (var x in lista)
                     {
                         if (x.GetDespacho() == seleccion)
@@ -443,31 +337,21 @@ namespace Practico1
                             Console.WriteLine(x.ParticiparDebate());
                         }
                     }
-                }
-                else if (seleccion == 5)
+                    Console.WriteLine("");
+                    Console.WriteLine("Presione enter para volver al menú");
+                }                
+                else if (seleccion == 5) // VOTAR
                 {
-                    Console.WriteLine("Ingrese número de despacho para seleccionar Legislador");
+                    Console.WriteLine("Ingrese número de despacho para seleccionar Legislador (entre 1 y 129)");
                     Legisladores.ListarCamaras();
                     do
                     {
                         esNumero = int.TryParse(Console.ReadLine(), out seleccion);
-                        if (!esNumero)
+                        if (!esNumero || (seleccion < 1 || seleccion >= 130))
                         {
-                            Console.WriteLine("No es un número, vuelva a ingresar.");
+                            Console.WriteLine("Incorrrecto, vuelva a ingresar.");
                         }
-                    } while (!esNumero);
-                    while (seleccion < 1 || seleccion > 129)
-                    {
-                        Console.WriteLine("Numero incorrecto. Ingrese numero de 1 al 129");
-                        do
-                        {
-                            esNumero = int.TryParse(Console.ReadLine(), out seleccion);
-                            if (!esNumero)
-                            {
-                                Console.WriteLine("No es un número, vuelva a ingresar.");
-                            }
-                        } while (!esNumero);
-                    }
+                    } while (!esNumero || (seleccion < 1 || seleccion >= 130));
                     foreach (var x in lista)
                     {
                         if (x.GetDespacho() == seleccion)
@@ -475,7 +359,8 @@ namespace Practico1
                             Console.WriteLine(x.Votar());
                         }                        
                     }
-                    
+                    Console.WriteLine("");
+                    Console.WriteLine("Presione enter para volver al menú");
                 }
                     Console.ReadKey();
                     Console.Clear();
@@ -492,15 +377,10 @@ namespace Practico1
                         esNumero = int.TryParse(Console.ReadLine(), out seleccion);
                         if (!esNumero)
                         {
-                            Console.WriteLine("No es un número, vuelva a ingresar.");
+                            Console.WriteLine("Incorrecto, vuelva a ingresar.");
                         }
-                    } while (!esNumero);
-                    while (seleccion != 0 && seleccion != 1 && seleccion != 2 && seleccion != 3 && seleccion != 4 && seleccion != 5)
-                    {
-                        Console.WriteLine("Número invalido. Ingrese nuevamente");
-                        seleccion = Convert.ToInt32(Console.ReadLine());
-                    }
-                    Console.Clear();               
+                    } while (!esNumero && seleccion != 0 && seleccion != 1 && seleccion != 2 && seleccion != 3 && seleccion != 4 && seleccion != 5);
+                Console.Clear();
             }
         }
     }

@@ -44,11 +44,10 @@ namespace Practico1
             }
         }
         
-      
-        private int contador = 0;
-        
+                    
         public int CantidadPorTipo(int numero)
         {
+            int contador = 0;
             if (numero == 0)
             {
                 foreach (var y in ListaLegisladores)
