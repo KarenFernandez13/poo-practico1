@@ -23,7 +23,7 @@ namespace Practico1
 
             List<Legislador> lista = Legisladores.ObtenerLegisladores();
             List<string> propuestasDiputados = Diputado1.ObtenerPropuestas();
-            List<string> propuestasSenadores = Senador1.ObtenerPropuestas();            
+            List<string> propuestasSenadores = Senador1.ObtenerPropuestas();
             string nombre;
             string apellido;
             string partido;
@@ -109,17 +109,7 @@ namespace Practico1
                             }
                         } while (!esNumero);
 
-                        Console.WriteLine("Ingrese Numero de Asiento: ");
-                        do
-                        {
-                            esNumero = int.TryParse(Console.ReadLine(), out numAsiento);
-                            if (!esNumero)
-                            {
-                                Console.WriteLine("No es un número, vuelva a ingresar.");
-                            }
-                        } while (!esNumero);
-                                                
-                        Console.WriteLine("Ingrese Departamento: ");                             
+                        Console.WriteLine("Ingrese Departamento: ");
                         departamento = (Console.ReadLine());
 
                         Console.WriteLine("Estado civil: 0 para soltero / 1 para casado");
@@ -129,7 +119,7 @@ namespace Practico1
                             esNumero = int.TryParse(Console.ReadLine(), out EstadoCivil);
                             if (!esNumero || (EstadoCivil != 0 && EstadoCivil != 1))
                             {
-                                Console.WriteLine("No es correccto, vuelva a ingresar.");
+                                Console.WriteLine("No es correcto, vuelva a ingresar.");
                             }
                         } while (!esNumero || (EstadoCivil != 0 && EstadoCivil != 1));
 
@@ -148,7 +138,7 @@ namespace Practico1
                                     Console.WriteLine("Incorrecto, vuelva a ingresar.");
                                 }
                             } while (!esNumero || (despacho < 1 || despacho > 30));
-                 
+
                             foreach (var x in lista)
                             {
                                 while (x.GetDespacho() == despacho)
@@ -159,7 +149,33 @@ namespace Practico1
                                         esNumero = int.TryParse(Console.ReadLine(), out despacho);
                                         if (!esNumero)
                                         {
-                                            Console.WriteLine("No es un número, vuelva a ingresar.");
+                                            Console.WriteLine("No es correcto, vuelva a ingresar.");
+                                        }
+                                    } while (!esNumero);
+                                }
+                            }
+
+                            Console.WriteLine("Ingrese Numero de Asiento (Entre 1 y 30): ");
+                            do
+                            {
+                                esNumero = int.TryParse(Console.ReadLine(), out numAsiento);
+                                if (!esNumero || (numAsiento < 1 || numAsiento > 30))
+                                {
+                                    Console.WriteLine("No es correcto, vuelva a ingresar.");
+                                }
+                            } while (!esNumero || (numAsiento < 1 || numAsiento > 30));
+
+                            foreach (var x in lista)
+                            {
+                                while (Senador1.GetAsientoAlta() == numAsiento)
+                                {
+                                    Console.WriteLine("Ese asiento ya está ocupado. Ingrese otro: ");
+                                    do
+                                    {
+                                        esNumero = int.TryParse(Console.ReadLine(), out numAsiento);
+                                        if (!esNumero)
+                                        {
+                                            Console.WriteLine("Incorrecto, vuelva a ingresar.");
                                         }
                                     } while (!esNumero);
                                 }
@@ -192,7 +208,33 @@ namespace Practico1
                                         esNumero = int.TryParse(Console.ReadLine(), out despacho);
                                         if (!esNumero)
                                         {
-                                            Console.WriteLine("No es un número, vuelva a ingresar.");
+                                            Console.WriteLine("Incorrecto. Vuelva a ingresar.");
+                                        }
+                                    } while (!esNumero);
+                                }
+                            }
+
+                            Console.WriteLine("Ingrese Numero de Asiento (De 1 a 99) : ");
+                            do
+                            {
+                                esNumero = int.TryParse(Console.ReadLine(), out numAsiento);
+                                if (!esNumero || (numAsiento < 1 || numAsiento > 99))
+                                {
+                                    Console.WriteLine("No es correcto, vuelva a ingresar.");
+                                }
+                            } while (!esNumero || (numAsiento > 99 || numAsiento < 1));
+
+                            foreach (var x in lista)
+                            {
+                                while (Diputado1.GetAsientoBaja() == numAsiento)
+                                {
+                                    Console.WriteLine("Ese asiento ya está ocupado. Ingrese otro: ");
+                                    do
+                                    {
+                                        esNumero = int.TryParse(Console.ReadLine(), out numAsiento);
+                                        if (!esNumero)
+                                        {
+                                            Console.WriteLine("No es un correcto, vuelva a ingresar.");
                                         }
                                     } while (!esNumero);
                                 }
@@ -209,6 +251,7 @@ namespace Practico1
                     {
                         Console.WriteLine("Ingrese número de despacho para eliminar (entre 1 y 129)");
                         Legisladores.ListarCamaras();
+
                         do
                         {
                             esNumero = int.TryParse(Console.ReadLine(), out despacho);
@@ -217,83 +260,124 @@ namespace Practico1
                                 Console.WriteLine("Incorrecto, vuelva a ingresar.");
                             }
                         } while (!esNumero || (despacho < 1 || despacho >= 130));
-                        foreach (var x in lista)
-                        {
-                            if (x.GetDespacho() != despacho)
-                            {
-                                Console.WriteLine("No hay un legislador ingresado con ese número de desapcho. Ingrese otro: ");
-                                do
-                                {
-                                    esNumero = int.TryParse(Console.ReadLine(), out despacho);
-                                    if (!esNumero || (despacho < 1 || despacho >= 130))
-                                    {
-                                        Console.WriteLine("Incorrecto, vuelva a ingresar.");
-                                    }
-                                } while (!esNumero || (despacho < 1 || despacho >= 130));
-                            }
-                        }
 
+                        Legislador objetoEncontrado = lista.Find(obj => obj.GetDespacho() == despacho);
+                        while (objetoEncontrado == null)
+                        {
+                            Console.WriteLine("No existe un legislador ingresado con ese numero de despacho, ingrese otro");
+                            esNumero = int.TryParse(Console.ReadLine(), out despacho);
+                            if (!esNumero || (despacho < 1 || despacho >= 130))
+                            {
+                                Console.WriteLine("Incorrecto, vuelva a ingresar.");
+                            }
+                            objetoEncontrado = lista.Find(obj => obj.GetDespacho() == despacho);
+                        }
                         Legisladores.EliminarLegislador(despacho);
                         Console.WriteLine("Legislador eliminado!");
                         Console.WriteLine("");
                         Console.WriteLine("Presione enter para volver al menú");
+                    }
+                    else if (seleccion == 2) //LISTADOS DE CAMARAS
+                    {
+                        Console.WriteLine("1 - Para listar cámaras");
+                        Console.WriteLine("2 - Para ver la cantidad de legisladores por tipo");
+                        do
+                        {
+                            esNumero = int.TryParse(Console.ReadLine(), out seleccion);
+                            if (!esNumero || (seleccion != 1 && seleccion != 2))
+                            {
+                                Console.WriteLine("Incorrecto, vuelva a ingresar.");
+                            }
+                        } while (!esNumero || (seleccion != 1 && seleccion != 2));
+                        Console.Clear();
 
-                    }
-                }
-                else if (seleccion == 2) //LISTADOS DE CAMARAS
-                {
-                    Console.WriteLine("1 - Para listar cámaras");
-                    Console.WriteLine("2 - Para ver la cantidad de legisladores por tipo");
-                    do
-                    {
-                        esNumero = int.TryParse(Console.ReadLine(), out seleccion);
-                        if (!esNumero || (seleccion != 1 && seleccion != 2))
+                        if (seleccion == 1)
                         {
-                            Console.WriteLine("Incorrecto, vuelva a ingresar.");
+                            Legisladores.ListarCamaras();
                         }
-                    } while (!esNumero || (seleccion != 1 && seleccion != 2));
-                    Console.Clear();
-
-                    if (seleccion == 1)
-                    {
-                        Legisladores.ListarCamaras();
-                    }
-                    else if (seleccion == 2)
-                    {
-                        Console.WriteLine("Cantidad de Diputados: " + Legisladores.CantidadPorTipo(0));
-                        Console.WriteLine("Cantidad de Senadores: " + Legisladores.CantidadPorTipo(1));
-                    }
-                    Console.WriteLine("");
-                    Console.WriteLine("Presione enter para volver al menú");
-                }
-                else if (seleccion == 3)   //PROPUESTAS
-                {
-                    Console.WriteLine("1 - Para ver propuestas existentes");
-                    Console.WriteLine("2 - Para ingresar propuesta de un legislador");
-                    do
-                    {
-                        esNumero = int.TryParse(Console.ReadLine(), out seleccion);
-                        if (!esNumero || (seleccion != 1 && seleccion != 2))
+                        else if (seleccion == 2)
                         {
-                            Console.WriteLine("Incorrecto, vuelva a ingresar.");
-                        }
-                    } while (!esNumero || (seleccion != 1 && seleccion != 2));
-                    Console.Clear();
-                    if (seleccion == 1)
-                    {
-                        Console.WriteLine("PROPUESTAS DE LA CÁMARA DE SENADORES");
-                        foreach (var x in propuestasSenadores)
-                        {
-                            Console.WriteLine(x);
+                            Console.WriteLine("Cantidad de Diputados: " + Legisladores.CantidadPorTipo(0));
+                            Console.WriteLine("Cantidad de Senadores: " + Legisladores.CantidadPorTipo(1));
                         }
                         Console.WriteLine("");
-                        Console.WriteLine("PROPUESTAS DE LA CÁMARA DE DIPUTADOS");
-                        foreach (var x in propuestasDiputados)
+                        Console.WriteLine("Presione enter para volver al menú");
+                    }
+                    else if (seleccion == 3)   //PROPUESTAS
+                    {
+                        Console.WriteLine("1 - Para ver propuestas existentes");
+                        Console.WriteLine("2 - Para ingresar propuesta de un legislador");
+                        do
                         {
-                            Console.WriteLine(x);
+                            esNumero = int.TryParse(Console.ReadLine(), out seleccion);
+                            if (!esNumero || (seleccion != 1 && seleccion != 2))
+                            {
+                                Console.WriteLine("Incorrecto, vuelva a ingresar.");
+                            }
+                        } while (!esNumero || (seleccion != 1 && seleccion != 2));
+                        Console.Clear();
+                        if (seleccion == 1)
+                        {
+                            Console.WriteLine("PROPUESTAS DE LA CÁMARA DE SENADORES");
+                            foreach (var x in propuestasSenadores)
+                            {
+                                Console.WriteLine(x);
+                            }
+                            Console.WriteLine("");
+                            Console.WriteLine("PROPUESTAS DE LA CÁMARA DE DIPUTADOS");
+                            foreach (var x in propuestasDiputados)
+                            {
+                                Console.WriteLine(x);
+                            }
                         }
-                    }                    
-                    else if (seleccion == 2)
+                        else if (seleccion == 2)
+                        {
+                            Console.WriteLine("Ingrese número de despacho para seleccionar Legislador (entre 1 y 129)");
+                            Legisladores.ListarCamaras();
+                            do
+                            {
+                                esNumero = int.TryParse(Console.ReadLine(), out seleccion);
+                                if (!esNumero || (seleccion < 1 || seleccion >= 130))
+                                {
+                                    Console.WriteLine("Incorrecto, vuelva a ingresar.");
+                                }
+                            } while (!esNumero || (seleccion < 1 || seleccion >= 130));
+
+                            foreach (var x in lista)
+                            {
+                                if (x.GetDespacho() == seleccion)
+                                {
+                                    Console.WriteLine(x.PresentarPropuesta());
+                                }
+                            }
+                        }
+                        Console.WriteLine("");
+                        Console.WriteLine("Presione enter para volver al menú");
+                    }
+                    else if (seleccion == 4)   //PARTICIPAR DEBATE
+                    {
+                        Console.WriteLine("Ingrese número de despacho para seleccionar Legislador (entre 1 y 129)");
+                        Legisladores.ListarCamaras();
+                        do
+                        {
+                            esNumero = int.TryParse(Console.ReadLine(), out seleccion);
+                            if (!esNumero || (seleccion < 1 && seleccion >= 130))
+                            {
+                                Console.WriteLine("Incorrecto, vuelva a ingresar.");
+                            }
+                        } while (!esNumero || (seleccion < 1 || seleccion >= 130));
+
+                        foreach (var x in lista)
+                        {
+                            if (x.GetDespacho() == seleccion)
+                            {
+                                Console.WriteLine(x.ParticiparDebate());
+                            }
+                        }
+                        Console.WriteLine("");
+                        Console.WriteLine("Presione enter para volver al menú");
+                    }
+                    else if (seleccion == 5) // VOTAR
                     {
                         Console.WriteLine("Ingrese número de despacho para seleccionar Legislador (entre 1 y 129)");
                         Legisladores.ListarCamaras();
@@ -302,66 +386,19 @@ namespace Practico1
                             esNumero = int.TryParse(Console.ReadLine(), out seleccion);
                             if (!esNumero || (seleccion < 1 || seleccion >= 130))
                             {
-                                Console.WriteLine("Incorrecto, vuelva a ingresar.");
+                                Console.WriteLine("Incorrrecto, vuelva a ingresar.");
                             }
                         } while (!esNumero || (seleccion < 1 || seleccion >= 130));
-                   
                         foreach (var x in lista)
                         {
                             if (x.GetDespacho() == seleccion)
                             {
-                                Console.WriteLine(x.PresentarPropuesta());
+                                Console.WriteLine(x.Votar());
                             }
                         }
+                        Console.WriteLine("");
+                        Console.WriteLine("Presione enter para volver al menú");
                     }
-                    Console.WriteLine("");
-                    Console.WriteLine("Presione enter para volver al menú");
-                }
-                else if (seleccion == 4)   //PARTICIPAR DEBATE
-                {
-                    Console.WriteLine("Ingrese número de despacho para seleccionar Legislador (entre 1 y 129)");
-                    Legisladores.ListarCamaras();
-                    do
-                    {
-                        esNumero = int.TryParse(Console.ReadLine(), out seleccion);
-                        if (!esNumero|| (seleccion != 1 && seleccion != 2))
-                        {
-                            Console.WriteLine("Incorrecto, vuelva a ingresar.");
-                        }
-                    } while (!esNumero || (seleccion < 1 || seleccion >= 130));
-                
-                    foreach (var x in lista)
-                    {
-                        if (x.GetDespacho() == seleccion)
-                        {
-                            Console.WriteLine(x.ParticiparDebate());
-                        }
-                    }
-                    Console.WriteLine("");
-                    Console.WriteLine("Presione enter para volver al menú");
-                }                
-                else if (seleccion == 5) // VOTAR
-                {
-                    Console.WriteLine("Ingrese número de despacho para seleccionar Legislador (entre 1 y 129)");
-                    Legisladores.ListarCamaras();
-                    do
-                    {
-                        esNumero = int.TryParse(Console.ReadLine(), out seleccion);
-                        if (!esNumero || (seleccion < 1 || seleccion >= 130))
-                        {
-                            Console.WriteLine("Incorrrecto, vuelva a ingresar.");
-                        }
-                    } while (!esNumero || (seleccion < 1 || seleccion >= 130));
-                    foreach (var x in lista)
-                    {
-                        if (x.GetDespacho() == seleccion)
-                        {
-                            Console.WriteLine(x.Votar());
-                        }                        
-                    }
-                    Console.WriteLine("");
-                    Console.WriteLine("Presione enter para volver al menú");
-                }
                     Console.ReadKey();
                     Console.Clear();
 
@@ -375,12 +412,13 @@ namespace Practico1
                     do
                     {
                         esNumero = int.TryParse(Console.ReadLine(), out seleccion);
-                        if (!esNumero)
+                        if (!esNumero && seleccion != 0 && seleccion != 1 && seleccion != 2 && seleccion != 3 && seleccion != 4 && seleccion != 5)
                         {
                             Console.WriteLine("Incorrecto, vuelva a ingresar.");
                         }
                     } while (!esNumero && seleccion != 0 && seleccion != 1 && seleccion != 2 && seleccion != 3 && seleccion != 4 && seleccion != 5);
-                Console.Clear();
+                    Console.Clear();
+                }
             }
         }
     }

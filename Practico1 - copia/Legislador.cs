@@ -15,7 +15,7 @@ namespace Practico1
         protected string apellido;
         protected int edad;
         protected bool casado;
-        protected string camara;
+        protected string camara;      
 
         public Legislador(string partidoPolitico, string departamento, int despacho, string nombre, string apellido, 
             int edad, bool casado, string camara) 

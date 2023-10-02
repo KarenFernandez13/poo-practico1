@@ -11,9 +11,9 @@ namespace Practico1
         private int NumAsientoBaja;
 
         public Diputado(string partidoPolitico, string departamento, int despacho, string nombre, string apellido, int edad,
-            bool casado, string camara, int NumAsientoBaja) : base(partidoPolitico, departamento, despacho, nombre, apellido, edad, casado, camara) 
+            bool casado, string camara, int numAsiento) : base(partidoPolitico, departamento, despacho, nombre, apellido, edad, casado, camara) 
         {
-            this.NumAsientoBaja = NumAsientoBaja;
+            this.NumAsientoBaja = numAsiento;
         }
 
         public int GetAsientoBaja() => NumAsientoBaja;

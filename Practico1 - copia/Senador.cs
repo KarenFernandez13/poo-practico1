@@ -12,9 +12,9 @@ namespace Practico1
         private int NumAsientoAlta;
 
         public Senador(string partidoPolitico, string departamento, int despacho, string nombre, string apellido, int edad, 
-            bool casado, string camara, int NumAsientoAlta) : base(partidoPolitico, departamento, despacho, nombre, apellido, edad, casado, camara) 
+            bool casado, string camara, int numAsiento) : base(partidoPolitico, departamento, despacho, nombre, apellido, edad, casado, camara) 
         {
-            this.NumAsientoAlta = NumAsientoAlta;
+            this.NumAsientoAlta = numAsiento;
             
         }
 
