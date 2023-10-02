@@ -147,11 +147,11 @@ namespace Practico1
                                     do
                                     {
                                         esNumero = int.TryParse(Console.ReadLine(), out despacho);
-                                        if (!esNumero)
+                                        if (!esNumero || (despacho < 1 || despacho > 30))
                                         {
                                             Console.WriteLine("No es correcto, vuelva a ingresar.");
                                         }
-                                    } while (!esNumero);
+                                    } while (!esNumero || (despacho < 1 || despacho > 30));
                                 }
                             }
 
@@ -173,11 +173,11 @@ namespace Practico1
                                     do
                                     {
                                         esNumero = int.TryParse(Console.ReadLine(), out numAsiento);
-                                        if (!esNumero)
+                                        if (!esNumero || (numAsiento < 1 || numAsiento > 99))
                                         {
                                             Console.WriteLine("Incorrecto, vuelva a ingresar.");
                                         }
-                                    } while (!esNumero);
+                                    } while (!esNumero || (numAsiento < 1 || numAsiento > 30));
                                 }
                             }
 
@@ -206,11 +206,11 @@ namespace Practico1
                                     do
                                     {
                                         esNumero = int.TryParse(Console.ReadLine(), out despacho);
-                                        if (!esNumero)
+                                        if (!esNumero|| (despacho < 31 || despacho > 130))
                                         {
                                             Console.WriteLine("Incorrecto. Vuelva a ingresar.");
                                         }
-                                    } while (!esNumero);
+                                    } while (!esNumero || (despacho < 31 || despacho > 130));
                                 }
                             }
 
@@ -232,11 +232,11 @@ namespace Practico1
                                     do
                                     {
                                         esNumero = int.TryParse(Console.ReadLine(), out numAsiento);
-                                        if (!esNumero)
+                                        if (!esNumero || (numAsiento < 1 || numAsiento > 99))
                                         {
                                             Console.WriteLine("No es un correcto, vuelva a ingresar.");
                                         }
-                                    } while (!esNumero);
+                                    } while (!esNumero || (numAsiento < 1 || numAsiento > 99));
                                 }
                             }
                             camara = "Diputado";
@@ -270,6 +270,7 @@ namespace Practico1
                             if (!esNumero || (despacho < 1 || despacho >= 130))
                             {
                                 Console.WriteLine("Incorrecto, vuelva a ingresar.");
+                                esNumero = int.TryParse(Console.ReadLine(), out despacho);
                             }
                             objetoEncontrado = lista.Find(obj => obj.GetDespacho() == despacho);
                         }
