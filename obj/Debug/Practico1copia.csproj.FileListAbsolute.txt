@@ -1,0 +1,28 @@
+C:\Users\Usuario\Documents\Downloads\Practico1 - copia\obj\Debug\Practico1copia.csproj.AssemblyReference.cache
+C:\Users\Usuario\Documents\Downloads\Practico1 - copia\obj\Debug\Practico1copia.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\Downloads\Practico1 - copia\obj\Debug\Practico1.exe
+C:\Users\Usuario\Documents\Downloads\Practico1 - copia\obj\Debug\Practico1.pdb
+C:\Users\Usuario\Documents\Downloads\Practico1 - copia\bin\Debug\Practico1.exe.config
+C:\Users\Usuario\Documents\Downloads\Practico1 - copia\bin\Debug\Practico1.exe
+C:\Users\Usuario\Documents\Downloads\Practico1 - copia\bin\Debug\Practico1.pdb
+C:\Users\usuario\OneDrive\Escritorio\poo-practico1-main\Practico1 - copia\bin\Debug\Practico1.exe.config
+C:\Users\usuario\OneDrive\Escritorio\poo-practico1-main\Practico1 - copia\bin\Debug\Practico1.exe
+C:\Users\usuario\OneDrive\Escritorio\poo-practico1-main\Practico1 - copia\bin\Debug\Practico1.pdb
+C:\Users\usuario\OneDrive\Escritorio\poo-practico1-main\Practico1 - copia\obj\Debug\Practico1copia.csproj.AssemblyReference.cache
+C:\Users\usuario\OneDrive\Escritorio\poo-practico1-main\Practico1 - copia\obj\Debug\Practico1copia.csproj.CoreCompileInputs.cache
+C:\Users\usuario\OneDrive\Escritorio\poo-practico1-main\Practico1 - copia\obj\Debug\Practico1.exe
+C:\Users\usuario\OneDrive\Escritorio\poo-practico1-main\Practico1 - copia\obj\Debug\Practico1.pdb
+C:\Users\usuario\OneDrive\Escritorio\segundo semestre\prog2\práctico 1\Practico1\Practico1 - copia\bin\Debug\Practico1.exe.config
+C:\Users\usuario\OneDrive\Escritorio\segundo semestre\prog2\práctico 1\Practico1\Practico1 - copia\bin\Debug\Practico1.exe
+C:\Users\usuario\OneDrive\Escritorio\segundo semestre\prog2\práctico 1\Practico1\Practico1 - copia\bin\Debug\Practico1.pdb
+C:\Users\usuario\OneDrive\Escritorio\segundo semestre\prog2\práctico 1\Practico1\Practico1 - copia\obj\Debug\Practico1copia.csproj.AssemblyReference.cache
+C:\Users\usuario\OneDrive\Escritorio\segundo semestre\prog2\práctico 1\Practico1\Practico1 - copia\obj\Debug\Practico1copia.csproj.CoreCompileInputs.cache
+C:\Users\usuario\OneDrive\Escritorio\segundo semestre\prog2\práctico 1\Practico1\Practico1 - copia\obj\Debug\Practico1.exe
+C:\Users\usuario\OneDrive\Escritorio\segundo semestre\prog2\práctico 1\Practico1\Practico1 - copia\obj\Debug\Practico1.pdb
+C:\Users\Usuario\Documents\Downloads\poo-practico1-main\Practico1 - copia\bin\Debug\Practico1.exe.config
+C:\Users\Usuario\Documents\Downloads\poo-practico1-main\Practico1 - copia\bin\Debug\Practico1.exe
+C:\Users\Usuario\Documents\Downloads\poo-practico1-main\Practico1 - copia\bin\Debug\Practico1.pdb
+C:\Users\Usuario\Documents\Downloads\poo-practico1-main\Practico1 - copia\obj\Debug\Practico1copia.csproj.AssemblyReference.cache
+C:\Users\Usuario\Documents\Downloads\poo-practico1-main\Practico1 - copia\obj\Debug\Practico1copia.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Documents\Downloads\poo-practico1-main\Practico1 - copia\obj\Debug\Practico1.exe
+C:\Users\Usuario\Documents\Downloads\poo-practico1-main\Practico1 - copia\obj\Debug\Practico1.pdb
